@@ -1,5 +1,7 @@
-# chords takes key and mode as inputs and returns a list of all naturally occuring chords in that scale. 
-# Currently only takes major or minor as input for mode.
+# This program outputs a list of naturally occurring chords in any given major or natural minor scale. 
+# It is based on music theory, and it is a useful tool for music composition.
+# Author: Andrew Luther
+# Version: Dec 29 2021
 
 def chords(key, mode):
     mode = mode.upper()
@@ -13,9 +15,8 @@ def chords(key, mode):
         chords = [[0, 0], [2, 1], [4, 1], [5, 0], [7,0], [9,1], [11,2]] # 0 is maj 1 is min 2 is dim
     elif mode == "MINOR":
         chords = [[0, 1], [2, 2], [3, 0], [5, 1], [7,1], [8,0], [10,0]]
-        #chords = [0, 2, 3, 5, 7, 8, 10]
     else: 
-        print("mode error") # change this to an exception
+        print("Invalid Input")
         return
 
     for i in range(len(chords)):
@@ -26,5 +27,9 @@ def chords(key, mode):
         elif chords [i][1] == 2: chords[i][1] = "diminished"
     return chords
 
+def main():
+    print(chords("G", "minor"))
 
-print(chords("G", "minor"))
+if __name__ == "__main__":
+    main()
+
