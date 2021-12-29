@@ -10,17 +10,21 @@ def chords(key, mode):
     key_int = key_ints[key]
 
     if mode == "MAJOR":
-        chords = [0, 2, 4, 5, 7, 9, 11]
+        chords = [[0, 0], [2, 1], [4, 1], [5, 0], [7,0], [9,1], [11,2]] # 0 is maj 1 is min 2 is dim
     elif mode == "MINOR":
-        chords = [0, 2, 3, 5, 7, 8, 10]
+        chords = [[0, 1], [2, 2], [3, 0], [5, 1], [7,1], [8,0], [10,0]]
+        #chords = [0, 2, 3, 5, 7, 8, 10]
     else: 
         print("mode error") # change this to an exception
         return
 
     for i in range(len(chords)):
-        chords[i] = (chords[i] + key_int)%12
-        chords[i] = keys[chords[i]]
+        chords[i][0] = (chords[i][0] + key_int)%12
+        chords[i][0] = keys[chords[i][0]]
+        if chords[i][1] == 0: chords[i][1] = "major"
+        elif chords [i][1] == 1: chords[i][1] = "minor"
+        elif chords [i][1] == 2: chords[i][1] = "diminished"
     return chords
 
 
-print(chords("C", "minor"))
+print(chords("G", "minor"))
