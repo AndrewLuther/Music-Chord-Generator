@@ -2,5 +2,5 @@ Project: Music Chord Generator
 Creator: Andrew Luther
 Creation Date: Dec 29 2021
 
-Music Chord Generator is a program that outputs a list of naturally occurring chords in any given major or natural minor scale. 
+Music Chord Generator outputs a list of naturally occurring chords in any given major or natural minor scale. 
 It is based on music theory, and it is a useful tool for music composition.
